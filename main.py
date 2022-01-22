@@ -1,5 +1,8 @@
 import core
 
+fileName = 'php-net.html'
 response = core.webPageRequest('https://www.php.net/')
-contents = core.readPageToFile('php-net.html')
+core.writePageToFile(response, fileName)
+contents = core.readPageToFile(fileName)
 listResult = core.parseContent([], contents)
+print(listResult)
